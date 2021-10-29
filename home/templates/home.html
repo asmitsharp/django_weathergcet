@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="content_wrapper" id="app">
+	<div v-if="infos.city">
+		<h1>
+			Weather App
+			<div class="date"></div>
+		</h1>
+     <form class="frm" method="get">
+		 <input class="intForm" name="city" placeholder="Enter City">
+		 <button class="btn" type="submit">Check Weather</button>
+	 </form>
+		<div class="weather_card">
+			<div class="weather_card_img">
+				<div class="weather_card_state">
+					<span class="material-icons">
+						<img src="http://openweathermap.org/img/wn/{{data.icon}}.png">
+					</span>
+				</div>
+			</div>
+
+			<div class="weather_card_infos">
+				<div class="weather_card_infos_title">
+					{{data.city}}
+				</div>
+				<div class="weather_card_infos_temp">
+				{{data.celcius_temperature}} °C / {{data.kelvin_temperature}}°K <br>
+                 <span>Feels like : {{data.feelslike}}°C {{data.main}}. {{data.description}} </span>
+				</div>
+				<div class="bottom">
+					<hr>
+					<div class="weather_card_infos_bottom">
+						Humidity : {{data.humidity}}%  Pressure: {{data.pressure}}Pa
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="info_card">
+			<div class="fore-title">
+				<span>Hourly Forecast for the Day</span>
+			</div><br>
+			<div class="info-list">
+				<ul class="list">
+					<li class="list-in">Date</li>
+					<li>Min Temp</li>
+					<li>Max Temp</li>
+					<li>Visibility</li>
+				</ul>
+				<ul class="fore1">
+					<li class="date">{{forecast.date}}</li>
+					<li>{{forecast.minTemp}}°C</li>
+					<li>{{forecast.maxTemp}}°C</li>
+					<li>{{forecast.vis}}Km</li>
+				</ul>
+				<ul class="fore2">
+					<li class="date">{{forecast.date1}}</li>
+					<li>{{forecast.minTemp1}}°C</li>
+					<li>{{forecast.maxTemp1}}°C</li>
+					<li>{{forecast.vis1}}Km</li>
+				</ul>
+				<ul class="fore3">
+					<li class="date">{{forecast.date2}}</li>
+					<li>{{forecast.minTemp2}}°C</li>
+					<li>{{forecast.maxTemp2}}°C</li>
+					<li>{{forecast.vis2}}Km</li>
+				</ul>
+				<ul class="fore4">
+					<li class="date">{{forecast.date3}}</li>
+					<li>{{forecast.minTemp3}}°C</li>
+					<li>{{forecast.maxTemp3}}°C</li>
+					<li>{{forecast.vis3}}Km</li>
+				</ul>
+			</div>
+        </div>
+	</div>
+</div>
+
+{% endblock content %}

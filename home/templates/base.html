@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+        * {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica;
+}
+
+.content_wrapper {
+	padding: 3% 0;
+	margin: 0 auto;
+	width: 600px;
+}
+
+h1 {
+	font-weight: 600;
+	font-size: 30px;
+	margin-bottom: 20px;
+	color: rgb(24, 62, 87);
+}
+
+.weather_card {
+	margin-top: 15px;
+	display: flex;
+	border-radius: 10px;
+	width: 100%;
+	height: 150px;
+	padding: 15px;
+	box-shadow: -5px 5px 15px 5px rgba(33, 239, 247, 0.2);
+}
+
+.weather_card_img {
+	background-image: url('https://images.pexels.com/photos/1431822/pexels-photo-1431822.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
+	width: calc(120px - 15px);
+	display: flex;
+	background-size: cover;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.weather_card_state {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.1);
+	color: #fff;
+	font-size: 50px;
+}
+
+.weather_card_state .material-icons {
+	font-size: 50px;
+}
+
+.weather_card_infos {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding-left: 15px;
+}
+
+.weather_card_infos_title {
+	font-size: 18px;
+
+	font-weight: 1000;
+	margin-bottom: 10px;
+}
+
+.weather_card_infos_title > span {
+    color: rgb(53, 75, 172);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.weather_card_infos_temp {
+	font-size: 22px;
+	font-weight: 300;
+	color: rgb(170,170,170);
+}
+
+.weather_card_infos_temp > span {
+    font-size: 15px;
+    font-weight: 1000;
+    color: rgb(12, 12, 12);
+}
+
+.date {
+	margin-top: 5px;
+	font-weight: 300;
+	display: flex;
+	align-items: flex-end;
+	flex-grow: 1;
+	font-size: 12px;
+}
+
+hr {
+	width: 100%;
+	height: 1px;
+	background: rgba(100,100,100,.2);
+	border: none;
+}
+
+.bottom {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	  flex-grow: 1;
+      color: rgb(65, 145, 211);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-weight: 1000;
+}
+
+.weather_card_infos_bottom {
+	font-size: 15px;
+	font-weight: 300;
+}
+
+input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+
+.frm {
+	
+	justify-content: center;
+	display: flex;
+	border-radius: 10px;
+	width: 100%;
+	height: 70px;
+	padding: 10px;
+	box-shadow: -5px 5px 15px 5px rgba(33, 239, 247, 0.2);
+}
+
+.intForm{
+	
+	border: none;
+	border-radius: 30px;
+	margin-left: 5px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn{
+	margin-left: 10px;
+	background: blueviolet;
+	border: none;
+	border-radius: 20px;
+	color: white;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: 200;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.info_card {
+	margin-top: 15px;
+	border-radius: 10px;
+	width: 100%;
+	height: 330px;
+	padding: 15px;
+	box-shadow: -5px 5px 15px 5px rgba(33, 239, 247, 0.2);
+}
+
+.fore-title{
+	margin-left: 25%;
+    font-weight: 1000;
+	font-size: 20px;
+	color: rgb(80, 3, 99);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  border-radius: 10px;
+}
+
+
+li  {
+   margin-left: 37px;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.fore1, .fore3 {
+	border-radius: 10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f1456a;
+}
+
+.fore2, .fore4 {
+	border-radius: 10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f7992f;
+}
+
+
+
+.fore1 > li  {
+   margin-left: 35px;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.date{
+	font-size: 10px;
+}
+    </style>
+  </head>
+  <body>
+      {% block content %}
+        
+
+      {% endblock content %}
+  </body>
+</html>
