@@ -3,4 +3,4 @@ Weather App
 
 Live Weather App With Hourly Forecast for the day
 
-Created By - Asmit and Harsha
+Created By - Asmit 
